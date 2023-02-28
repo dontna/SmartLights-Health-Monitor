@@ -21,12 +21,19 @@ Modify the configuration file located at config.h. You need to set the process n
 
 3. Make the necessary changes you need to in the 'config.h' header, located in 'src/'
 
-4. Compile the code:
+4. Open the 'config.ini' file, located in python/, and edit the ip_address to your devices ip.
+`ip_address = '192.168.1.68'`
+
+If you're struggling to find the devices ip you can open a new terminal and type
+`kasa discover`
+which will show you the devices on your network.
+
+5. Compile the code:
 `make`
 
-5. Open the game, if you're just trying this out then open SaintsRow3 with DX10/11 when prompted.
+6. Open the game, if you're just trying this out then open SaintsRow3 with DX10/11 when prompted.
 
-6. Run the program:
+7. Run the program:
 `sudo ./monitor_health`
 
 Note that the program requires root access to open the keyboard event device. Also, this script only works on the following TPLink SmartLightStrips:

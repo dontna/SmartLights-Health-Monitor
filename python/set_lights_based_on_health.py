@@ -1,4 +1,4 @@
-import asyncio, time, math, sys
+import asyncio, time, math, sys, configparser, os
 from kasa import SmartLightStrip
 
 
@@ -16,7 +16,13 @@ def calculate_next_hsv_value(heatlh_value: float):
         return math.floor(heatlh_value)  
 
 def main(heatlh_value: float):
-    light_strip = SmartLightStrip("192.168.1.68")
+    config = configparser.ConfigParser()
+
+    path_to_this_scripts_directory = os.path.dirname(os.path.abspath(__file__))
+
+    config.read(f"{path_to_this_scripts_directory}/config.ini")
+
+    light_strip = SmartLightStrip(config['SmartLights']['ip_address'].replace('\'', '').replace('"', ""))
     hsv_value = calculate_next_hsv_value(heatlh_value)
 
     asyncio.run(set_smart_lights_color(light_strip, hsv_value))
