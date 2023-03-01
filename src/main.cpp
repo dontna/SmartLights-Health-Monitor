@@ -61,6 +61,7 @@ void UpdateLights(float health) {
   snprintf(command, sizeof(command),"sudo -u $(logname) python python/set_lights_based_on_health.py %d", healthAsInt);
   system(command);
 }
+
 float GetHealthAsPercentage(float health, float max_health) {
   return (health / max_health) * 100.0f;
 }
@@ -76,7 +77,7 @@ int main() {
   pid_t processID = GetPIDFromProcessName(Config::processName.c_str());
 
   // Health Address, for Saints Row 3 this is static.
-  uintptr_t healthAddress = 0x1AA457E8;
+  uintptr_t healthAddress = 0x05686410;
 
   float currentHealth;
   float lastHealthRegistered = 0.0f;
