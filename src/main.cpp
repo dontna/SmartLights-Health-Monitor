@@ -95,9 +95,13 @@ int main() {
   bool exitKeyPressed = false;
 
   while (!exitKeyPressed) {
+    if (read(fd, &ev, sizeof(ev)) < static_cast<ssize_t>(sizeof(ev))) {
+          perror("Failed to read keyboard event. Try running with sudo?");
+          break;
+    }
 
     // Check for the HACK_EXITKEY pressed.
-    if (ev.type == EV_KEY && ev.value == 0) {
+    if (ev.type == EV_KEY && ev.value == 1) {
       if (ev.code == Config::Keybinds::HACK_EXITKEY) {
         exitKeyPressed = true;
         printf("Exiting now...");
