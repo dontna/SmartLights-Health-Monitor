@@ -2,7 +2,7 @@
 This code allows you to monitor the health of a game character in real time and update the color of your TPLink SmartLight Strip based on their health.
 
 # Note before continuing
-1. This game was made and tested on Saints Row 3, however I've tried to make the code extremely easy to modiy so you can monitor the health from another game you want to!
+1. This game was made and tested on Saints Row 3, however I've tried to make the code extremely easy to modify so you can monitor the health from another game you want to!
 
 Although bare in mind, you will have to get these addresses yourself with Cheat Engine.
 
