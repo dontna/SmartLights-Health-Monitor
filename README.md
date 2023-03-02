@@ -18,9 +18,9 @@ To use this code, follow these steps:
 
 2. Install Python dependencies:
 `pip install python-kasa`
-Modify the configuration file located at config.h. You need to set the process name of the game, the path to the keyboard event, and the key to exit the script.
 
-3. Make the necessary changes you need to in the 'config.h' header, located in 'src/'
+3. Make the necessary changes you need to in the 'config.ni' header, located in 'src/'
+You need to set the process name of the game, the path to the keyboard event, and optionally the key to exit the script.
 
 4. Open the 'config.ini' file, located in python/, and edit the ip_address to your devices ip.
 `ip_address = '192.168.1.68'`
@@ -29,7 +29,7 @@ If you're struggling to find the devices ip you can open a new terminal and type
 `kasa discover`
 which will show you the devices on your network.
 
-5. Compile the code:
+5. Once all changes have been made, compile the code:
 `make`
 
 6. Open the game, if you're just trying this out then open SaintsRow3 with DX10/11 when prompted.
